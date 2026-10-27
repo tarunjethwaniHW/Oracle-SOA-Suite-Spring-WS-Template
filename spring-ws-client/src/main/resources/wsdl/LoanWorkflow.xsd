@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/LoanOrchestration/types"
+           xmlns:tns="http://xmlns.oracle.com/LoanOrchestration/types"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+  <!-- Core Loan Elements -->
+  <xs:element name="LoanApplicationRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="applicantName" type="xs:string"/>
+        <xs:element name="ssn" type="xs:string"/>
+        <xs:element name="loanAmount" type="xs:double"/>
+        <xs:element name="monthlyIncome" type="xs:double"/>
+        <xs:element name="propertyAddress" type="xs:string"/>
+        <xs:element name="propertyValue" type="xs:double"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="LoanApplicationResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="loanId" type="xs:long"/>
+        <xs:element name="status" type="xs:string"/>
+        <xs:element name="decision" type="xs:string"/>
+        <xs:element name="decisionNotes" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>
